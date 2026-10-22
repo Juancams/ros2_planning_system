@@ -1,0 +1,11 @@
+<map id="ActionStamped" name="ActionStamped">
+<area shape="rect" id="Node000001" title="Representation of an action with its temporal information." alt="" coords="108,109,218,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,65,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,46,47,66,59,83,82,99,108,110,106,115,79,104,55,87,42,68,36,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="88,5,142,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,46,114,66,119,84,129,96,141,106,138,110,125,100,114,86,108,66,108,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="168,5,254,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,46,184,86,172,110,167,108,179,84,198,44"/>
+<area shape="rect" id="Node000005" href="$classplansys2_1_1ActionVariant.html" title="Structure that holds either an Action or DurativeAction message." alt="" coords="279,5,378,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="299,42,228,87,187,111,184,106,226,83,297,38"/>
+</map>
