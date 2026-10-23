@@ -340,7 +340,7 @@ class PlanSys2App(App):
             pending, self._pending = self._pending, {}
             events, self._pending_events = self._pending_events, []
         for box, text in pending.items():
-            box.update(text)
+            self._set_panel(box, text)
         if self._plan_log is not None and events:
             if self._plan_log_empty:
                 self._plan_log.clear()
@@ -352,6 +352,11 @@ class PlanSys2App(App):
             snapshot, self._bt_snapshot = self._bt_snapshot, None
         if snapshot is not None:
             self._draw_bt(snapshot)
+
+    def _set_panel(self, box, text: str) -> None:
+        box.update(text)
+        if getattr(self, '_running', False):
+            self.call_after_refresh(box.refresh, layout=True)
 
     def action_show_tab(self, tab: str) -> None:
         self.query_one(TabbedContent).active = tab
@@ -507,12 +512,14 @@ class PlanSys2App(App):
         if executor_up != self._executor_up:
             self._executor_up = executor_up
             if self._box_plan is not None:
-                self._box_plan.update(
+                self._set_panel(
+                    self._box_plan,
                     self._with_banner(self._plan_text, executor_up, 'The executor'))
         if problem_expert_up != self._problem_expert_up:
             self._problem_expert_up = problem_expert_up
             if self._box_know is not None:
-                self._box_know.update(
+                self._set_panel(
+                    self._box_know,
                     self._with_banner(self._know_text, problem_expert_up, 'The problem expert'))
 
     # ------------------------------------------------------------------
